@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 4: Dynamic html with JavaScript</title>
+    </head>
+    <body>
+
+        <h1>Lab 4: Dynamic html with JavaScript  Lab Report by Yan Liu</h1>
+        <h2>Objectives</h2>
+        <ul>
+            <li>To learn the fundamentals of the DOM hierarchy</li>
+            <li>To learn about event-driven programming</li>
+            <li>To learn the fundamentals of dynamic client-side html using JavaScript</li>
+            </ul>
+        <h3>Theory
+            JavaScript</h3>
+    <p>
+        In the last assignment, you created a static web site. A dynamic web site is responsive to user input. In this lab, we will add client-side dynamism to your site. In a later lab, we will add server-side dynamism.
+        JavaScript is used everywhere throughout the modern web to respond to user input, perform user validation, load third-party content, and more. Have a look at the page source of a typical web page, and note how frequently JavaScript is invoked and for what purpose.
+        
+    </p>
+        <h4>References</h4>
+        <div>
+            As usual, w3schools and Wikipedia are your friends. 
+        <div>
+        <ul>
+            <li><span style="color:red">JaveScript:</span> <a href=" https://www.w3schools.com/js/default.asp">click here.</a></li>
+            <li><span style="color:red">The DOM:</span> <a href="https://www.w3schools.com/xml/dom_intro.asp ">click here.</a></li>
+            <li><span style="color:red">Event-driven programming with the DOM:</span> <a href="https://en.wikipedia.org/wiki/DOM_events">click here</a> and</span> <a href="https://www.w3schools.com/js/js_htmldom_events.asp ">click here.</a></li>
+            <li><span style="color:red">Comand line git:</span> <a href="https://help.github.com/en/articles/set-up-git ">click here.</a></li>
+        </ul>       
+        <h5>RESULT</h5>
+        <p>Input your name:</p>
+        <form>
+            Firstname: <input type="text" id="Firstname" name="Firstname"/>
+            <br/>
+            Lastname: <input type="text" id="Lastname" name="Lastname"/>
+            <br/>
+        <p>1. Who is the kindest teacher at Dawson College?:</p>
+        Candidate:
+            <select id="name" name="name">
+                  <option value="1">Jimmy Plaitis</option>
+                  <option value="2">Nick Markou</option>
+                  <option value="3">Sharon Shasha</option>
+                  <option value="4">Daniel Lavoie</option>
+            </select>
+            <p id="demo" style="display:none">Good Chioce!</p>
+            <button type="button" onclick="document.getElementById('demo').style.display='block'">submit</button>
+
+            <p onclick="this.innerHTML='Ooops! Thank you! '"><span style="color:blue">Do you agree with me? cilck here</span></p>
+
+            <p>2. Who is the best-looking teacher at Dawson College?:</p>
+            
+            <input type="radio" name="teacher" value = "Have you lost your mind?"/>Raad Al Ashoor<br>
+            <input type="radio" name="teacher" value = "Do you really think it's a good choice?"/>Boris Lorkovic<br>
+            <input type="radio" name="teacher" value = "I don't want to talk to you anymore..."/>John Veroutsos<br>
+            <input type="radio" name="teacher" value = "Finally...congratulations!"/>Sharon Shasha<br>
+          
+            <input type="submit" value="clear"/>
+            <div id='aa' style=' width:200px; height:50px; display:none; border: 1px solid gray;'></div>
+            </form>
+            <script>
+                var a = document.getElementsByName('teacher');
+                var b = document.getElementById('aa');
+                for (var i = 0; i < a.length; i++) {
+                    a[i].onclick = function () {
+                         
+                        b.style.display = "block";
+                        b.innerHTML = this.value;           
+                    }
+                }
+                document.write(Date());
+            </script>
+            <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+            style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+            Mouse Over Me</div>
+            
+            <script>
+            function mOver(obj) {
+              obj.innerHTML = "Thank You! Have a nice day!"
+            }
+            
+            function mOut(obj) {
+              obj.innerHTML = "Mouse Over Me"
+            }
+            </script>
+
+</body>
+</html>
